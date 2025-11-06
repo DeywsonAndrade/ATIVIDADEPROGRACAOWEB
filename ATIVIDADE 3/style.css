@@ -1,0 +1,526 @@
+/*
+ * ----------------------------------------------------
+ * ESTILOS GERAIS E LAYOUT BASE
+ * ----------------------------------------------------
+ */
+
+:root {
+    /* Cores do Tema Voluntariado */
+    --cor-primaria: #007bff; /* Azul vibrante: Confiança e Liderança */
+    --cor-secundaria: #28a745; /* Verde Esperança: Crescimento e Sustentabilidade */
+    --cor-texto: #333;
+    --cor-fundo: #f8f9fa; /* Fundo leve para clareza */
+    --cor-clara: #ffffff;
+    --cor-cinza-claro: #e9ecef;
+    --cor-destaque: #ffc107; /* Amarelo: Atenção e Energia */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* ------------------ TIPOGRAFIA ------------------ */
+
+h1, h2, h3 {
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: var(--cor-clara); 
+    padding: 20px 0;
+}
+
+h2 {
+    font-size: 2em;
+    color: var(--cor-primaria);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.5em;
+    color: var(--cor-secundaria);
+    margin-top: 20px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--cor-secundaria);
+    text-decoration: underline;
+}
+
+/* * ----------------------------------------------------
+ * CABEÇALHO (HEADER) E NAVEGAÇÃO (NAV) - ESTILOS FINAIS
+ * ----------------------------------------------------
+ */
+
+header {
+    background-color: var(--cor-primaria); 
+    border-bottom: 4px solid var(--cor-secundaria); 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    /* NOVO: Flexbox para centralizar itens na barra azul */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilo para o H1 (Título/Logo) na barra azul */
+header h1 {
+    font-size: 2.2em;
+    color: var(--cor-clara);
+    margin: 0;
+    padding: 15px 20px;
+    text-align: center;
+    /* Para centralizar o logo dentro do H1 */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.logo {
+    font-weight: bold;
+    /* Herdando a cor do H1, mas mantendo o tamanho e estilo */
+}
+
+/* Container da Navegação - Barra Branca */
+header nav {
+    background-color: var(--cor-clara); 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    width: 100%; /* Ocupa a largura total abaixo do H1 */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra para destacar a barra branca */
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header ul li {
+    margin: 0;
+}
+
+header ul li a {
+    color: var(--cor-texto); /* Texto escuro sobre fundo branco */
+    font-weight: 600;
+    padding: 15px 25px; 
+    border-radius: 0;
+    transition: background-color 0.3s, color 0.3s;
+    display: block; 
+}
+
+header ul li a:hover,
+header ul li a.active {
+    background-color: var(--cor-primaria);
+    color: var(--cor-clara); /* Texto branco no fundo azul (item ativo) */
+    text-decoration: none;
+}
+
+
+/* Estilo para o H2 (Títulos Secundários da Página) que vai APÓS a navegação */
+header h2 {
+    background-color: var(--cor-clara); 
+    color: var(--cor-primaria);
+    padding: 20px 20px;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 2.2em;
+    border-bottom: none; 
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* * ----------------------------------------------------
+ * SEÇÕES E CONTEÚDO PRINCIPAL
+ * ----------------------------------------------------
+ */
+
+section {
+    background-color: var(--cor-clara);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* Estilo para a Imagem em index.html */
+section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+    border: 5px solid var(--cor-cinza-claro);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Estilo da seção Contato */
+section:last-of-type h3 {
+    color: var(--cor-primaria);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+section:last-of-type p {
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+/* Estilização de Listas (Projeto.html) */
+#voluntariado ul, #doacao ul {
+    list-style-type: none; 
+    margin-left: 0;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+#voluntariado li, #doacao li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+/* Adiciona um ícone/bullet personalizado */
+#voluntariado li::before, #doacao li::before {
+    content: "✅";
+    color: var(--cor-secundaria);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    margin-right: 0.5em;
+}
+
+/* Estilo de Doação (Texto PIX e Banco) */
+#doacao strong {
+    color: var(--cor-primaria);
+    font-size: 1.1em;
+    display: block;
+    margin-top: 5px;
+}
+
+/* * * BOTÕES E CHAMADAS PARA AÇÃO
+ * */
+
+.signup-section button[type="submit"],
+#doacao button {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-clara);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    display: inline-block; 
+    margin-top: 15px;
+}
+
+.signup-section button[type="submit"]:hover,
+#doacao button:hover {
+    background-color: #1e7e34; 
+    transform: translateY(-2px);
+}
+
+/* Estilo específico para o botão de cadastro (que é full-width) */
+.signup-section button[type="submit"] {
+    width: 100%;
+    margin-top: 20px;
+    background-color: var(--cor-primaria); 
+}
+
+.signup-section button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+/* * * FORMULÁRIOS (CADASTRO.HTML)
+ * */
+
+.signup-section {
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+fieldset {
+    border: 2px solid var(--cor-cinza-claro);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+legend {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--cor-primaria);
+    padding: 0 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--cor-secundaria);
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+/* Estilização da Mensagem de Sucesso */
+.sucress-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/*
+ * ----------------------------------------------------
+ * ESTILOS NOVOS: TEMPLATES E VALIDAÇÃO JS 
+ * ----------------------------------------------------
+ */
+
+/* Estilos de Erro de Validação */
+.error-message {
+    color: #dc3545; /* Vermelho forte */
+    font-size: 0.9em;
+    margin-top: 5px;
+    padding: 5px 0;
+    font-weight: 500;
+}
+
+.form-group input.input-error,
+.form-group select.input-error {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+/* Estilos para Templates de Projetos */
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.projeto-card {
+    background-color: var(--cor-cinza-claro);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--cor-secundaria);
+    transition: transform 0.3s ease;
+}
+
+.projeto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.projeto-card h3 {
+    color: var(--cor-primaria);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.cta-voluntariar {
+    display: inline-block;
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto);
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.cta-voluntariar:hover {
+    background-color: #e0ac00;
+    text-decoration: none;
+}
+
+/* Estilos para centralizar botão e QR Code na seção de Doação */
+.doacao-acao {
+    text-align: center; 
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.doacao-acao button {
+    margin: 15px auto; 
+    display: block; 
+}
+
+.doacao-acao p {
+    text-align: center;
+}
+
+.doacao-acao img.qr-code {
+    display: block; 
+    margin: 20px auto; 
+    max-width: 180px; 
+    width: 100%;
+    border: 5px solid var(--cor-cinza-claro); 
+    border-radius: 5px;
+    cursor: pointer; 
+}
+
+/* * * RODAPÉ (FOOTER)
+ * */
+
+footer {
+    background-color: var(--cor-texto); 
+    color: var(--cor-cinza-claro);
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+/* Estilo para a frase "Feito com ❤️" (cadastro.html) */
+footer p:last-child {
+    font-style: italic;
+    color: var(--cor-destaque);
+    font-weight: bold;
+}
+/*
+ * * Para funcionar em dispositivos móveis 
+ * */
+
+@media (max-width: 768px) {
+    /* Ajustes Gerais para Telas Pequenas */
+    main {
+        margin: 10px auto;
+        padding: 0 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+        padding: 20px 10px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    /* ------------------ NAVEGAÇÃO ------------------ */
+
+    header nav {
+        flex-direction: column; 
+        padding: 10px;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+        font-size: 1.5em;
+    }
+
+    header ul {
+        flex-direction: column; 
+        width: 100%;
+        text-align: center;
+    }
+
+    header ul li {
+        margin: 5px 0; 
+        width: 100%;
+    }
+
+    header ul li a {
+        display: block; 
+        padding: 10px 0;
+    }
+
+    /* ------------------ SEÇÕES E CONTEÚDO ------------------ */
+
+    section {
+        padding: 20px 15px; 
+        margin-bottom: 20px;
+    }
+
+    /* Ajuste para o H1 em index.html (que não é o cabeçalho grande) */
+    header h1 {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    /* ------------------ FORMULÁRIOS ------------------ */
+
+    .signup-section {
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 10px;
+    }
+
+    /* ------------------ RODAPÉ ------------------ */
+
+    footer {
+        padding: 15px 10px;
+    }
+}
