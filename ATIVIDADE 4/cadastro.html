@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Voluntários</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header>
+        <h1><div class="logo">💙 Voluntários</div></h1>
+
+        <nav>
+            <ul id="navMenu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="projeto.html">Projetos</a></li>
+                <li><a href="cadastro.html" class="active">Cadastro</a></li>
+            </ul>
+        </nav>
+        <h2>Cadastre-se como Voluntário</h2>
+    </header>
+
+    
+    <main>
+        <section class="signup-section">
+            <h1>Cadastro de Voluntários</h1>
+            
+            <div class="sucress-message" id="sucessMessage" style="display: none;" aria-live="polite">
+                Cadastro realizado com sucesso!
+            </div>
+            
+            <form id="volunteenForm">
+                
+                <fieldset>
+                    <legend>Dados Pessoais</legend>
+                    
+                        <div class="form-group">
+                            <label for="nome">Nome completo</label> 
+                            <input type="text" id="nome" name="nome" required> 
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefone">Telefone *</label>
+                            <input type="tel" id="telefone" name="telefone" placeholder="Apenas números, ex: 11999999999" maxlength="11" required>
+                        </div> 
+                    
+                        <div class="form-group">
+                            <label for="idade">Idade *</label>
+                            <input type="number" id="idade" name="idade" min="18" max="80" required>
+                        </div> 
+                </fieldset>
+
+                <fieldset>
+                    <legend>Disponibilidade</legend>
+                        <div class="form-group">
+                            <label for="disponibilidade">Quando você pode atuar como voluntário</label>
+                            <select id="disponibilidade" name="disponibilidade" required >
+                                <option value="" disabled selected>Selecione.</option> 
+                                <option value="final-de-semana">Fins de Semana</option>
+                                <option value="dias-uteis">Dias Úteis</option>
+                                <option value="flexivel">Flexível</option>
+                                <option value="feriados">Feriados</option>
+                            </select>
+                        </div>
+                </fieldset>
+                
+                <button type="submit">Enviar Inscrição</button>
+                
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Organização de Voluntários. Todos os direitos reservados.</p>
+        <p>Feito com ❤️ para transformar vidas</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
